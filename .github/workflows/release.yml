@@ -37,7 +37,7 @@ jobs:
           printf -- "---\n:github: Bearer ${GITHUB_TOKEN}\n" > $HOME/.gem/credentials
           yarn
           rake build VERSION=${{ github.event.inputs.version }}
-          gem push --key github --host https://rubygems.pkg.github.com/openc3 openc3-cosmos-template-vue-${{ github.event.inputs.version }}.gem
+          gem push --key github --host https://rubygems.pkg.github.com/openc3 openc3-tool-template-vue-${{ github.event.inputs.version }}.gem
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: create tag for release
