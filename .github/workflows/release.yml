@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version string"
+        description: 'Version string'
         required: true
         type: string
 
@@ -24,6 +24,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
       - name: Publish Gems Github
         run: |
           mkdir -p $HOME/.gem
@@ -41,4 +46,4 @@ jobs:
           github_repo: ${{ github.repository }}
           git_commit_sha: ${{ github.sha }}
           version: ${{ github.event.inputs.version }}
-          git_tag_prefix: "v"
+          git_tag_prefix: 'v'
