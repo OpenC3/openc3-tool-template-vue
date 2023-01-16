@@ -10,13 +10,9 @@
   <div>
     <top-bar :menus="menus" :title="title" />
     <v-card>
-      <v-card-title>
-        Example Card
-      </v-card-title>
+      <v-card-title> Example Card </v-card-title>
       <v-card-text>
-        <v-btn block @click="buttonPress">
-          Example Button
-        </v-btn>
+        <v-btn block @click="buttonPress"> Example Button </v-btn>
       </v-card-text>
     </v-card>
   </div>
@@ -41,7 +37,7 @@ export default {
             {
               label: 'Show Alert',
               command: () => {
-                alert("Alert Shown")
+                alert('Alert Shown')
               },
             },
           ],
@@ -54,7 +50,7 @@ export default {
   },
   methods: {
     buttonPress() {
-      alert("Button Pressed")
+      alert('Button Pressed')
     },
   },
 }

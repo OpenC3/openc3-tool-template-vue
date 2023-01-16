@@ -4,7 +4,7 @@ module.exports = {
   filenameHashing: false,
   transpileDependencies: ['vuetify'],
   devServer: {
-    port: 2913,
+    port: 2999,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
@@ -12,7 +12,7 @@ module.exports = {
       webSocketURL: {
         hostname: 'localhost',
         pathname: '/tools/templatevue',
-        port: 2913,
+        port: 2999,
       },
     },
   },
@@ -21,20 +21,8 @@ module.exports = {
       libraryTarget: 'system',
     },
   },
-  chainWebpack: config => {
-    config.module
-      .rule('js')
-      .use('babel-loader')
-      .tap((options) => {
-        return {
-          rootMode: 'upward',
-        }
-      })
-    config.externals([
-      'vue',
-      'vuetify',
-      'vuex',
-      'vue-router',
-    ])
+  chainWebpack: (config) => {
+    config.module.rule('js').use('babel-loader')
+    config.externals(['vue', 'vuetify', 'vuex', 'vue-router'])
   },
 }

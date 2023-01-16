@@ -25,5 +25,6 @@ task :build => [:require_version] do
   if platform == 'mswin32' or platform == 'mingw32'
     puts "Warning: Building gem on Windows will lose file permissions"
   end
+  system("yarn run build")
   system("gem build #{PLUGIN_NAME}")
 end
