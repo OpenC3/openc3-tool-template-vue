@@ -34,6 +34,12 @@ Windows:
 1. yarn
 1. rake build VERSION=1.0.0
 
+## Installing into OpenC3 COSMOS
+
+1. Go to the OpenC3 Admin Tool, Plugins Tab
+1. Select your newly built plugin (ie. openc3-tool-template-vue-1.0.0.gem)
+1. Click Install
+
 ## Contributing
 
 We encourage you to contribute to OpenC3!
