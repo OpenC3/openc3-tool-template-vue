@@ -13,9 +13,26 @@ This plugin provides a template for creating OpenC3 Tools in Vue
 1. Rename the .gemspec file to the name of your plugin
 1. Edit the .gemspec file fields: name, summary, description, authors, email, and homepage
 1. Update the LICENSE.txt file with your company name
-1. Build your tool in src
-1. Run: yarn
-1. Build your plugin with: rake build VERSION=1.0.0
+
+## Building using a local Ruby/Node/Yarn/Rake Environment
+
+1. yarn
+1. rake build VERSION=1.0.0
+
+## Building using Docker and the openc3-node container
+
+If you don’t have a local node environment, you can use our openc3-node container to build custom tools and custom widgets
+
+Mac / Linux:
+
+`` docker run -it -v `pwd`:/openc3/local:z -w /openc3/local docker.io/openc3inc/openc3-node sh ``
+
+Windows:
+
+`docker run -it -v %cd%:/openc3/local -w /openc3/local docker.io/openc3inc/openc3-node sh`
+
+1. yarn
+1. rake build VERSION=1.0.0
 
 ## Contributing
 
